@@ -154,6 +154,18 @@ abstract class Enum
     }
 
     /**
+     * Return new instance by value
+     *
+     * @param $value
+     *
+     * @return static
+     */
+    public static function byValue($value)
+    {
+        return new static($value);
+    }    
+
+    /**
      * Returns a value when called statically like so: MyEnum::SOME_VALUE() given SOME_VALUE is a class constant
      *
      * @param string $name
