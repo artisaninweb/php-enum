@@ -66,6 +66,18 @@ abstract class Enum
     }
 
     /**
+     * Check if enum is equal to
+     *
+     * @param $enum
+     *
+     * @return bool
+     */
+    public function equalsTo($enum)
+    {
+        return $this === $enum;
+    }
+
+    /**
      * @return string
      */
     public function __toString()
