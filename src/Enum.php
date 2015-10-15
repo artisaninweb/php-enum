@@ -72,9 +72,9 @@ abstract class Enum
      *
      * @return bool
      */
-    public function equalsTo($enum)
+    public function equalsTo(Enum $enum)
     {
-        return $this === $enum;
+        return $this == $enum;
     }
 
     /**
