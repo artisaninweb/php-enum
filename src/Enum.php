@@ -175,7 +175,25 @@ abstract class Enum
     public static function byValue($value)
     {
         return new static($value);
-    }    
+    }
+    
+    /**
+     * Return new instance by key
+     *
+     * @param string $byKey
+     *
+     * @return static
+     */
+    public static function byKey($byKey)
+    {
+      foreach (static::toArray() as $key => $value) {
+        if (strtoupper($byKey) == strtoupper($key)) {
+          return new static($value);
+        }
+      }
+
+      throw new \UnexpectedValueException("The key '$byKey' is not part of the enum " . get_called_class());
+    }
 
     /**
      * Returns a value when called statically like so: MyEnum::SOME_VALUE() given SOME_VALUE is a class constant
